@@ -1,0 +1,353 @@
+/*
+Theme Name: kay-wp-2019
+Author: Timo Käyttäjän ystävä
+Version: 1.0
+*/
+
+/* LAYOUT GRID */
+.grid-container {
+  box-sizing: border-box;
+  display: grid;
+  grid-column-gap: 24px;
+  grid-row-gap: 24px;
+  grid-template-columns:repeat(12, 1fr);
+}
+.wrapper {
+  margin: 0 auto;
+  padding: 24px;
+  width: 720px;
+}
+.page-wrapper {
+  padding-top: 103px;
+}
+.col-12 {
+  grid-column: 1 / -1;
+}
+/* TYPOGRAPHY */
+.mdc-typography--headline2,
+.mdc-typography--headline3,
+.mdc-typography--headline4,
+.mdc-typography--headline5 {
+  color: #283583;
+  font-family: "ff-tisa-sans-web-pro";
+  font-weight: 750;
+}
+.mdc-typography--body1 {
+  font-family: "ff-tisa-sans-web-pro";
+}
+a {
+  color: #374AB5;
+  font-family: "ff-tisa-sans-web-pro";
+  font-weight: bold;
+  opacity: 1;
+}
+a:active {
+  color: #EC5878;
+}
+.intro-paragraph	{
+  color: #000;
+  color: rgba(0, 0, 0, 0.60);
+  font-size: 1.115rem;
+  line-height: 2rem;
+}
+/* LISTS */
+ul {
+  padding: 0;
+}
+ul li {
+  color: #000;
+  color: rgba(0, 0, 0, 0.87);
+  font-family: "ff-tisa-sans-web-pro";
+  line-height: 1.5rem;
+  list-style: none;
+  margin: 12px 0;
+}
+/* BUTTONS */
+.mdc-button {
+  font-family: "ff-tisa-sans-web-pro";
+}
+.mdc-button:not(:disabled) {
+  color: inherit;
+}
+.mdc-button::before, .mdc-button::after {
+  background-color: #eee;
+}
+.mdc-fab {
+  background: #E81140;
+}
+.mdc-fab__label {
+  color: #fff;
+  font-family: "ff-tisa-sans-web-pro";
+}
+.scroll-button {
+  display: block;
+  font-size: 1.35em;
+  font-weight: 500;
+  height: auto;
+  letter-spacing: normal;
+  margin: 0 auto;
+  padding: 18px 16px 12px 16px;
+  text-transform: none;
+}
+.scroll-button span, .scroll-button i {
+  color: #fff;
+  color: rgba(255,255,255,0.60);
+  display: block;
+}
+.scroll-button:hover span,
+.scroll-button:hover i {
+  color: #fff;
+  color: rgba(255,255,255,1);
+}
+/* IMAGES */
+figure {
+  margin: 16px 0;
+}
+figcaption {
+  font-family: "ff-tisa-sans-web-pro";
+}
+/* PAGE TOP BAR */
+.top-bar {
+  align-items: center;
+  background: #283583;
+  display: flex;
+  z-index: 1000;
+}
+.page-top-bar {
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0
+  rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+  left: 0;
+  padding: 12px 12px;
+  position: fixed;
+  right: 0;
+}
+.frontpage-top-bar {
+  padding: 16px 24px;
+}
+.top-bar-logo {
+  padding: 0 8px;
+}
+.frontpage-top-bar .top-bar-logo img {
+  height: 72px;
+}
+.page-top-bar .top-bar-logo img {
+  height: 52px;
+}
+.top-bar-nav {
+  color: #fff;
+  margin-left: auto;
+}
+.top-bar-nav a {
+  font-size: 1.115rem;
+  font-weight: 500;
+  letter-spacing: normal;
+  opacity: 0.60;
+  padding: 12px;
+  text-decoration: none;
+  text-transform: none;
+}
+.top-bar-nav a:hover {
+  opacity: 0.87;
+}
+.page-top-bar .top-bar-nav {
+  font-size: 1.115rem;
+}
+.frontpage-top-bar .top-bar-nav a {
+  font-size: 1.35rem;
+}
+.menu-button {
+  display: none;
+  font-weight: 500;
+  margin-left: auto;
+}
+.menu-button:not(:disabled):hover {
+  color: #fff;
+}
+.menu-button:not(:disabled) {
+  color: #fff;
+  color: rgba(255, 255, 255, 0.60);
+}
+.mdc-menu {
+  left: 24px;
+  opacity: 1;
+  right: 24px;
+}
+.frontpage-top-bar .mdc-menu {
+  top: 95px;
+}
+.page-top-bar .mdc-menu {
+  top: 80px;
+}
+.mdc-list-item {
+  color: #374AB5 !important;
+  font-size: 1.115rem;
+  padding: 8px 16px;
+}
+/* FRONTPAGE */
+.frontpage-header {
+  background: #283583;
+  margin: 0 auto;
+  padding: 24px;
+  width: auto;
+}
+.frontpage-headline {
+  color: #fff;
+  font-family: "ff-tisa-sans-web-pro";
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1.5em;
+  margin: 32.160px 0;
+}
+.frontpage-headline strong {
+  color: #F8B2C1;
+}
+.frontpage-header-column {
+  grid-column: 2 / 11;
+}
+.frontpage-bottom-section {
+  position: relative;
+  text-align: center;
+}
+.frontpage-bottom-section::before{
+  background: #EEEFF5;
+  bottom: 0;
+  content: "";
+  left: 50%;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  width: 100vw;
+  z-index: -10;
+}
+.frontpage-bottom-section .mdc-fab {
+  margin-bottom: 48px;
+}
+/* BOARD MEMBERS */
+.board-persons-section {
+  padding-bottom: 24px;
+}
+.board-person {
+  grid-column: span 4;
+}
+.board-person span {
+  color: rgba(0, 0, 0, 0.87);
+  font-family: "ff-tisa-sans-web-pro";
+  font-size: 1.115rem;
+  line-height: 1.5rem;
+}
+.board-person span:nth-of-type(2) {
+  font-size: 1.25rem;
+}
+.board-person {
+  grid-column: span 4;
+}
+.board-person.past span {
+  color: rgba(0, 0, 0, 0.60);
+  font-family: "ff-tisa-sans-web-pro";
+  font-size: 0.885rem;
+}
+.board-person.past span:nth-of-type(2) {
+  font-size: 1rem;
+}
+.board-group-img {
+  width: 100%;
+}
+/* FOOTER */
+.main-footer {
+  align-items: center;
+  border-top: 1px solid #EBECF3;
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+  text-align: center;
+}
+.main-footer-bottom {
+  margin-top: 24px;
+}
+.footer-icon {
+  padding: 12px;
+}
+.footer-icon .fab,
+.footer-icon .fab:visited {
+  color: #000;
+  color: rgba(0, 0, 0, 0.60);
+}
+.footer-signature i {
+  color: #000;
+  color: rgba(0,0,0,0.87);
+}
+/* OTHER */
+.google_form {
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+.google_form_label {
+  display: block;
+  margin-top: 24px;
+}
+.google_form_checkbox-label {
+  display: block;
+}
+.google_form_input {
+  display: block;
+  width: 100%;
+}
+.google_form_checkbox {
+  margin-right: 12px;
+}
+.google_forms_button {
+  margin-top: 24px;
+}
+/* MEDIA RULES */
+@media only screen and (max-width: 959px) {
+  .frontpage-header-column {
+    grid-column: 1 / -1;
+  }
+}
+@media only screen and (max-width: 839px) {
+  .grid-container {
+    grid-template-columns:repeat(8, auto);
+  }
+  .wrapper {
+    width: auto;
+  }
+}
+@media only screen and (max-width: 719px) {
+  .grid-container {
+    grid-column-gap: 16px;
+  }
+  .page-wrapper {
+    padding-top: 95px;
+  }
+  .top-bar-nav {
+    display: none;
+  }
+  .menu-button {
+    display: block;
+  }
+  .frontpage-headline {
+    font-size: 2.75rem;
+  }
+  .top-bar-logo {
+    padding: 0;
+  }
+  .frontpage-top-bar .top-bar-logo img {
+    height: 60px;
+  }
+  .scroll-button {
+    font-size: 1.125rem;
+  }
+}
+@media only screen and (max-width: 599px) {
+  .frontpage-headline {
+    font-size: 2.25rem;
+  }
+}
+@media only screen and (max-width: 479px) {
+  .grid-container {
+    grid-template-columns:repeat(4, auto);
+  }
+  .frontpage-headline {
+    font-size: 2rem;
+  }
+}
