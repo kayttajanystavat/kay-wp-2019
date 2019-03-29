@@ -10,9 +10,9 @@
     <?php wp_head(); ?>
   </head>
   <body <?php body_class( 'mdc-typography' ); ?>>
-    <header class="top-bar frontpage-top-bar">
+    <header class="top-bar page-top-bar">
       <a href="<?php echo home_url(); ?>" class="top-bar-logo">
-        <img src="<?php echo get_template_directory_uri() ?>/img/kay-white_vector.svg" alt="Käyttäjän ystävät ry">
+        <img src="<?php echo get_template_directory_uri() ?>/img/kay-white_vector.svg" alt="Käyttäjän ystävät ry" height="52">
       </a>
       <nav class="top-bar-nav">
         <?php
@@ -37,20 +37,3 @@
          ?>
        </div>
     </header>
-    <div class="frontpage-header">
-      <div class="grid-container">
-        <section class="frontpage-header-column" aria-labelledby="frontpage-top-headline">
-          <h1 id="frontpage-top-headline" class="frontpage-headline">
-            Olemme <strong>käytettävyydestä</strong>,
-            <strong>käyttäjäkokemuksesta</strong> ja
-            <strong>palvelumuotoilusta</strong>
-            kiinnostuneiden poikkitieteellinen yhdistys.
-          </h1>
-          <button onClick="document.getElementById('about-section').scrollIntoView({behavior: 'smooth', block: 'start'});"
-          aria-label="Skrollaa alaspäin seuraavaan sisältöön" title="Skrollaa seuraavaan sisältöön" class="scroll-button mdc-button" type="button" name="button">
-            <span>Tutustu meihin</span>
-            <i class="fas fa-angle-down"></i>
-          </button>
-        </section>
-      </div>
-    </div>
