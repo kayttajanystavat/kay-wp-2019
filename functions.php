@@ -13,19 +13,26 @@
   }
   add_action('wp_enqueue_scripts', 'getCustomScripts' );
 
-  // Ingressi
+  /* Forced introductory text on first paragraphs */
   function first_paragraph($content){
     return preg_replace('/<p([^>]+)?>/', '<p$1 class="intro-paragraph">', $content, 1);
   }
   add_filter('the_content', 'first_paragraph');
 
-  // Theme setup
+  /* Include Walker files */
+  require get_template_directory() . '/inc/primary_walker.php';
+  require get_template_directory() . '/inc/mobile_walker.php';
+
+  /* Theme setup */
   function kayWPSetup() {
-    // Navigation
+
+    // Register navigation menus
     register_nav_menus(array(
       'primary' => __('Primary'),
     ));
-
   }
   add_action('after_setup_theme', 'kayWPSetup');
+
+
+
 ?>

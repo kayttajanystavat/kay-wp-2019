@@ -20,23 +20,25 @@
       <nav class="top-bar-nav">
         <?php
           $args = array(
+            'theme_location' => 'primary',
             'container' => false,
-            'echo' => false,
-            'items_wrap' => '%3$s',
-            'depth'=> 0
+            'walker' => new Walker_Nav_Primary()
           );
-          echo strip_tags(wp_nav_menu( $args ), '<a>' );
+          wp_nav_menu( $args );
          ?>
        </nav>
       <button class="mdc-button menu-button" onclick="openMenu()">Valikko</button>
       <div class="mdc-menu mdc-menu-surface" tabindex="-1">
-        <div class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
-          <a href="/hallitus/" class="mdc-list-item" role="menuitem">Hallitus</a>
-          <a href="/tapahtumat/" class="mdc-list-item" role="menuitem">Tapahtumat</a>
-          <a href="/liity/" class="mdc-list-item" role="menuitem">Liity</a>
-          <a href="/ota-yhteytta/" class="mdc-list-item" role="menuitem">Ota yhteyttä</a>
-        </div>
-      </div>
+        <?php
+          $args = array(
+            'theme_location' => 'primary',
+            'container' => false,
+            'items_wrap' => '<div class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">%3$s</div>',
+            'walker' => new Walker_Nav_Mobile()
+          );
+          wp_nav_menu( $args );
+         ?>
+       </div>
     </header>
     <div class="frontpage-header">
       <div class="grid-container">
