@@ -40,15 +40,10 @@
     <div class="frontpage-header">
       <div class="grid-container">
         <section class="frontpage-header-column" aria-labelledby="frontpage-top-headline">
-          <h1 id="frontpage-top-headline" class="frontpage-headline">
-            Olemme <strong>käytettävyydestä</strong>,
-            <strong>käyttäjäkokemuksesta</strong> ja
-            <strong>palvelumuotoilusta</strong>
-            kiinnostuneiden poikkitieteellinen yhdistys.
-          </h1>
+          <h1 id="frontpage-top-headline" class="frontpage-headline"><?php echo get_theme_mod('kay_main_headline'); ?></h1>
           <button onClick="document.getElementById('about-section').scrollIntoView({behavior: 'smooth', block: 'start'});"
           aria-label="Skrollaa alaspäin seuraavaan sisältöön" title="Skrollaa seuraavaan sisältöön" class="scroll-button mdc-button" type="button" name="button">
-            <span>Tutustu meihin</span>
+            <span><?php echo get_theme_mod('kay_header_button_text'); ?></span>
             <i class="fas fa-angle-down"></i>
           </button>
         </section>

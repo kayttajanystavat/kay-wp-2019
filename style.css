@@ -44,6 +44,12 @@ a {
 a:active {
   color: #EC5878;
 }
+p a:hover {
+  background-color: rgba(55, 74, 181, 0.87);
+  border-radius: 2px;
+  color: #fff;
+  text-decoration: none;
+}
 .intro-paragraph	{
   color: #000;
   color: rgba(0, 0, 0, 0.60);
@@ -54,16 +60,15 @@ a:active {
 ul {
   padding: 0;
 }
-li {
-  list-style: none;
-}
 ul li {
   color: #000;
   color: rgba(0, 0, 0, 0.87);
   font-family: "ff-tisa-sans-web-pro";
   line-height: 1.5rem;
-  list-style: none;
   margin: 12px 0;
+}
+.widget_text {
+  list-style: none;
 }
 /* BUTTONS */
 .mdc-button {
@@ -129,6 +134,9 @@ figcaption {
 }
 .top-bar-logo {
   padding: 0 8px;
+}
+.top-bar-logo:hover {
+  background-color: transparent;
 }
 .frontpage-top-bar .top-bar-logo img {
   height: 72px;
@@ -274,6 +282,9 @@ figcaption {
 .footer-icon .fab:visited {
   color: #000;
   color: rgba(0, 0, 0, 0.60);
+}
+.footer-icon.mdc-button:hover {
+  bottom: 1px;
 }
 .footer-signature i {
   color: #000;

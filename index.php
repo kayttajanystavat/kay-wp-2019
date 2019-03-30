@@ -17,10 +17,10 @@
        ?>
     </section>
     <section class="col-12 frontpage-bottom-section" aria-labelledby="frontpage-bottom-section-headline">
-      <h4 id="frontpage-bottom-section-headline" class="mdc-typography--headline4">Ryhdy Käyttäjän ystäväksi</h4>
-      <p class="mdc-typography--body1">Liittymällä jäseneksemme saat helposti tiedon KäYn tulevista tapahtumista ja mm. alan työtarjouksista!</p>
-      <a href="/liity/" class="mdc-fab mdc-fab--extended">
-        <span class="mdc-fab__label">Liity jäseneksi</span>
+      <h4 id="frontpage-bottom-section-headline" class="mdc-typography--headline4"><?php echo get_theme_mod('kay_join_headline'); ?></h4>
+      <p class="mdc-typography--body1"><?php echo get_theme_mod('kay_join_paragraph'); ?></p>
+      <a href="<?php echo get_permalink(get_theme_mod('kay_join_button_link')); ?>" class="mdc-fab mdc-fab--extended">
+        <span class="mdc-fab__label"><?php echo get_theme_mod('kay_join_button_text'); ?></span>
       </a>
     </section>
   </main>

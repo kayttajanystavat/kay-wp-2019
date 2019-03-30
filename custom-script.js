@@ -1,18 +1,18 @@
 try{Typekit.load({ async: false });}catch(e){}
 
-var menuBtn = $('.menu-button');
+var menuBtn =  jQuery('.menu-button');
 
-$(document).ready(function() {
-  $( window ).resize(function() {
-    if ($(window).width() > 719) {
-       $('.mdc-menu').hide();
+jQuery(document).ready(function() {
+  jQuery( window ).resize(function() {
+    if (jQuery(window).width() > 719) {
+       jQuery('.mdc-menu').hide();
        menuBtn.text('Valikko');
     }
   });
 });
 function openMenu() {
-  $('.mdc-menu').fadeToggle( 150, function() {
-    if ($(this).is(':visible')) {
+  jQuery('.mdc-menu').fadeToggle( 0, function() {
+    if (jQuery(this).is(':visible')) {
       menuBtn.text('Sulje');
     } else {
       menuBtn.text('Valikko');
