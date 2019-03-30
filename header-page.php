@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="Käyttäjän ystävät ry on käytettävyysopiskelijoiden ja muiden alasta kiinnostuneiden poikkitieteellinen yhdistys. Yhdistyksen tarkoituksena on edistää käytettävyydestä ja käyttöliittymistä kiinnostuneiden ihmisten verkottumista, tiedottaa alan opetuksesta, tapahtumista ja uravaihtoehdoista sekä lisätä yleisesti ihmisten tietoisuutta käytettävyydestä ja siihen liittyvistä asioista.">
     <link rel="shortcut icon" type="image/png" href="/img/favicon.ico"/>
-    <title><?php bloginfo('name') ?></title>
+    <title><?php the_title()?> | <?php bloginfo('name') ?></title>
     <link rel="canonical" href="https://kayttajanystavat.fi/">
     <?php wp_head(); ?>
   </head>

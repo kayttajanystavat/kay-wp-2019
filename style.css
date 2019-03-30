@@ -67,9 +67,7 @@ ul li {
   line-height: 1.5rem;
   margin: 12px 0;
 }
-.widget_text {
-  list-style: none;
-}
+li.widget { list-style: none; }
 /* BUTTONS */
 .mdc-button {
   font-family: "ff-tisa-sans-web-pro";
@@ -283,8 +281,11 @@ figcaption {
   color: #000;
   color: rgba(0, 0, 0, 0.60);
 }
-.footer-icon.mdc-button:hover {
-  bottom: 1px;
+.footer-icon i {
+  position: relative;
+}
+.footer-icon:hover i  {
+  bottom: 2px;
 }
 .footer-signature i {
   color: #000;

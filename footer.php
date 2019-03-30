@@ -19,7 +19,6 @@
   </section>
 </footer>
 </div>
-<script src="https://use.typekit.net/qqq8gfx.js"></script>
 <?php wp_footer(); ?>
 </body>
 </html>

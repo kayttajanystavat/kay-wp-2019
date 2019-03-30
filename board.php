@@ -15,7 +15,10 @@
                   $boardName = get_sub_field('board_name');
                 ?>
                   <section class="board-persons-section" aria-labelledby="2019-headline">
-                    <h4 id="<?php echo $boardName; ?>-headline" class="mdc-typography--<?php if ($count > 0) { ?>headline5<?php } else { ?>headline4<?php } ?>">Hallitus <?php echo $boardName; ?></h4>
+                    <h4 id="<?php echo $boardName; ?>-headline"
+                      class="mdc-typography--<?php if ($count > 0) { ?>headline5<?php } else { ?>headline4<?php } ?>">
+                      Hallitus <?php echo $boardName; ?>
+                    </h4>
                     <div class="grid-container">
                       <?php if( have_rows('board_members') ):
                          while( have_rows('board_members') ): the_row();

@@ -41,39 +41,33 @@
 
 /* Add Material Design classses to headings  */
   add_filter('the_content', 'add_classes_to_headings', 20);
-  function add_classes_to_headings($content)
-  {
-      $doc = new DOMDocument(); //Instantiate DOMDocument
-      $doc->loadHTML('<?xml encoding="utf-8" ?>' . $content); //Load the Post/Page Content as HTML
-      $headline2 = $doc->getElementsByTagName('h2'); //Find all Textareas
-      $headline3 = $doc->getElementsByTagName('h3'); //Find all Textareas
-      $headline4 = $doc->getElementsByTagName('h4'); //Find all Textareas
-      foreach($headline2 as $heading)
-      {
-          append_attr_to_element($heading, 'class', 'mdc-typography--headline2');
-      }
-      foreach($headline3 as $heading)
-      {
-          append_attr_to_element($heading, 'class', 'mdc-typography--headline3');
-      }
-      foreach($headline4 as $heading)
-      {
-          append_attr_to_element($heading, 'class', 'mdc-typography--headline4');
-      }
-      return $doc->saveHTML(); //Return modified content as string
+  function add_classes_to_headings($content) {
+    $doc = new DOMDocument();
+    $doc->loadHTML('<?xml encoding="utf-8" ?>' . $content);
+    $headline2 = $doc->getElementsByTagName('h2');
+    $headline3 = $doc->getElementsByTagName('h3');
+    $headline4 = $doc->getElementsByTagName('h4');
+    foreach($headline2 as $heading) {
+      append_attr_to_element($heading, 'class', 'mdc-typography--headline2');
+    }
+    foreach($headline3 as $heading) {
+      append_attr_to_element($heading, 'class', 'mdc-typography--headline3');
+    }
+    foreach($headline4 as $heading) {
+      append_attr_to_element($heading, 'class', 'mdc-typography--headline4');
+    }
+    return $doc->saveHTML();
   }
-
   function append_attr_to_element(&$element, $attr, $value) {
-      if($element->hasAttribute($attr)) //If the element has the specified attribute
-      {
-          $attrs = explode(' ', $element->getAttribute($attr)); //Explode existing values
-          if(!in_array($value, $attrs))
-              $attrs[] = $value; //Append the new value
-          $attrs = array_map('trim', array_filter($attrs)); //Clean existing values
-          $element->setAttribute($attr, implode(' ', $attrs)); //Set cleaned attribute
+    if($element->hasAttribute($attr)) {
+      $attrs = explode(' ', $element->getAttribute($attr));
+      if(!in_array($value, $attrs))
+        $attrs[] = $value;
+      $attrs = array_map('trim', array_filter($attrs));
+      $element->setAttribute($attr, implode(' ', $attrs));
       }
       else
-          $element->setAttribute($attr, $value); //Set attribute
+        $element->setAttribute($attr, $value);
   }
 
   // Register widget area
@@ -93,7 +87,6 @@
   }
   add_action('widgets_init','widgets_area_init');
 
-
   /* Header customization options */
   function kay_customize_register( $wp_customize ) {
     $wp_customize->add_section('kay_header_section', array(
@@ -109,7 +102,6 @@
   		'settings' => 'kay_main_headline',
       'type' => 'text',
   	)));
-
     $wp_customize->add_setting('kay_header_button_text', array(
   		'default' => 'Tutustu meihin',
   	));
@@ -134,7 +126,6 @@
       'settings' => 'kay_join_headline',
       'type' => 'text',
     )));
-
     $wp_customize->add_setting('kay_join_paragraph', array(
       'default' => 'Liittymällä jäseneksemme saat helposti tiedon KäYn tulevista tapahtumista ja mm. alan työtarjouksista!',
     ));
@@ -144,7 +135,6 @@
       'settings' => 'kay_join_paragraph',
       'type' => 'text',
     )));
-
     $wp_customize->add_setting('kay_join_button_text', array(
   		'default' => 'Liity jäseneksi',
   	));
@@ -154,7 +144,6 @@
   		'settings' => 'kay_join_button_text',
       'type' => 'text',
   	)));
-
     $wp_customize->add_setting('kay_join_button_link', array());
   	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'kay_join_button_link_control', array(
   		'label' => 'Promo button link',
@@ -168,7 +157,7 @@
   		'title' => 'Social media icons',
   		'priority' => 32,
   	));
-
+    // Facebook
     $wp_customize->add_setting('kay_facebook_link', array(
   		'default' => '',
   	));
@@ -178,7 +167,7 @@
   		'settings' => 'kay_facebook_link',
       'type' => 'text',
   	)));
-
+    // Twitter
     $wp_customize->add_setting('kay_twitter_link', array(
   		'default' => '',
   	));
@@ -188,7 +177,7 @@
   		'settings' => 'kay_twitter_link',
       'type' => 'text',
   	)));
-
+    // LinkedIn
     $wp_customize->add_setting('kay_linkedin_link', array(
   		'default' => '',
   	));
@@ -198,7 +187,7 @@
   		'settings' => 'kay_linkedin_link',
       'type' => 'text',
   	)));
-
+    // Instagram
     $wp_customize->add_setting('kay_instagram_link', array(
   		'default' => '',
   	));
@@ -208,7 +197,7 @@
   		'settings' => 'kay_instagram_link',
       'type' => 'text',
   	)));
-
+    // Whatsapp
     $wp_customize->add_setting('kay_whatsapp_link', array(
   		'default' => '',
   	));
@@ -218,7 +207,15 @@
   		'settings' => 'kay_whatsapp_link',
       'type' => 'text',
   	)));
-
   }
   add_action('customize_register', 'kay_customize_register');
+
+  /* Remove widget title if it begins with an exclamation point */
+  add_filter( 'widget_title', 'remove_widget_title' );
+  function remove_widget_title( $widget_title ) {
+      if ( substr ( $widget_title, 0, 1 ) == '!' )
+          return;
+      else
+          return ( $widget_title );
+  }
 ?>
